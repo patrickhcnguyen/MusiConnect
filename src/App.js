@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import { Credentials } from './Credentials';
+import NavigationBar from './Components/NavigationBar';
+import Body from './Components/Body';
+import axios from 'axios';
 
-function App() {
+function App(props) {
+  const spotify = Credentials();
+  const [token, setToken] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavigationBar />
+      <Body />
     </div>
   );
 }

@@ -1,0 +1,45 @@
+/* Define a gradient for the top section */
+.top-section {
+    background: linear-gradient(135deg, #ff5733, #900C3F, #581845);
+    height: 33.33vh; /* Occupies approximately one-third of the viewport height */
+    width: 100%; /* Full width */
+    position: absolute;
+    top: 0; /* Position the black section at the top */
+    left: 0;
+    z-index: 1; /* Ensure the top section is above other content */
+  }
+  
+  .top-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .title h1 {
+    color: white;
+    font-size: 3em;
+  }
