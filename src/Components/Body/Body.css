@@ -1,0 +1,41 @@
+/* Style the middle section */
+.middle-section {
+    background-color: transparent;
+    padding: 50px; /* Reduce padding to make it smaller */
+    margin: 0 auto; /* Center the box horizontally */
+    z-index: 0;
+    border: none;
+    max-width: 400px; /* Adjust the max-width to make it more contained */
+  }
+  
+  .message-box {
+    margin-top: 125px;
+    padding: 10px;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .message-box h2 {
+    font-weight: bold;
+  }
+  
+  /* Style the text body */
+  .text-body {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  /* App.css */
+  .container {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Two columns: auto for the image and 1fr for the text */
+    grid-gap: 20px; /* Gap between image and text */
+    align-items: center; /* Vertically center items */
+  }
+  
+  .image {
+    max-width: 100px; /* Set a maximum width for the images */
+    height: auto; /* Maintain aspect ratio */
+  }

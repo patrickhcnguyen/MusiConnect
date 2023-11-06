@@ -1,7 +1,7 @@
 /* Define a gradient for the top section */
 .top-section {
     background: linear-gradient(135deg, #ff5733, #900C3F, #581845);
-    height: 33.33vh; /* Occupies approximately one-third of the viewport height */
+    height: 25vh; /* Occupies approximately one-third of the viewport height */
     width: 100%; /* Full width */
     position: absolute;
     top: 0; /* Position the black section at the top */
@@ -17,8 +17,8 @@
   
   .button {
     background-color: transparent;
-    border: 2px solid white;
-    color: white;
+    /* border: 2px solid white;*/
+    color: white; 
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
@@ -43,3 +43,5 @@
     color: white;
     font-size: 3em;
   }
+
+  

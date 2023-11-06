@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Body.css"
 import leaderboard from '../../images/leaderboard.png';
 import review from '../../images/review.png';
 
