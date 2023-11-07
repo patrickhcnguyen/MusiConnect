@@ -1,19 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom'; // Import ReactDOM
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Body from './Components/Body';
+import NavigationBar from './Components/NavigationBar';
+import SignUpForm from './Components/SignUpForm';
+import Leaderboard from './Components/NavigationBar/Leaderboard'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-root.render(<App subject="MusiConnect" />);
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/home" element={<Body />} />
+          <Route path="/account" element={<SignUpForm />} />
+          {/* <Route path="/review" element={<Review />} /> */}
+           <Route path="/leaderboard" element={<Leaderboard />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
 
+ReactDOM.render(<App/>, document.getElementById('root')); 
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export default App;
