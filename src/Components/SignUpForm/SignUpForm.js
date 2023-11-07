@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./SignUpForm.css";
+import { FirebaseContext } from "../../Firebase/FirebaseContext";
 
 const SignUpForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
+    const { firebase } = useContext(FirebaseContext);
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
         if (email === "" && password === "") {
             setError("Please fill out all fields.");
         } else if (email === "") {
@@ -16,8 +20,12 @@ const SignUpForm = () => {
         } else if (password === "") {
             setError("Please enter a password.");
         } else {
-            // Perform your action here
-            alert(email + ' ' + password);
+
+            firebase
+            .auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then(() => alert('signed up!'))
+            .catch((error) => alert(error.message))
             setEmail("");
             setPassword("");
         }
