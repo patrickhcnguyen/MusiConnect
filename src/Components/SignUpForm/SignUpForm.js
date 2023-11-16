@@ -1,13 +1,15 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
+import { useAuth } from "../../Firebase/AuthContext";
 import "./SignUpForm.css";
-import { FirebaseContext } from "../../Firebase/FirebaseContext";
+import WebApp from "../../Pages/WebApp";
+import { useNavigate } from "react-router-dom" 
 
 const SignUpForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-
-    const { firebase } = useContext(FirebaseContext);
+    const navigate = useNavigate();
+    const auth = useAuth();
     
 
     const handleSubmit = (event) => {
@@ -20,12 +22,11 @@ const SignUpForm = () => {
         } else if (password === "") {
             setError("Please enter a password.");
         } else {
-
-            firebase
-            .auth()
-            .createUserWithEmailAndPassword(email, password)
-            .then(() => alert('signed up!'))
-            .catch((error) => alert(error.message))
+            auth.signup({ 
+                email, 
+                password, 
+                callback: () => navigate('/webapp'),
+            });
             setEmail("");
             setPassword("");
         }
